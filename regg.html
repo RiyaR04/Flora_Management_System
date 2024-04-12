@@ -1,0 +1,534 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sign up</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+	<style>
+		blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+
+a{text-decoration:none;}
+.txt-rt{text-align:right;}
+.txt-lt{text-align:left;}
+.txt-center{text-align:center;}
+.float-rt{float:right;}
+.float-lt{float:left;}
+.clear{clear:both;}
+.pos-relative{position:relative;}
+.pos-absolute{position:absolute;}
+.vertical-base{	vertical-align:baseline;}
+.vertical-top{	vertical-align:top;}
+nav.vertical ul li{	display:block;}
+nav.horizontal ul li{	display: inline-block;}
+img{max-width:100%;}
+
+body{
+	font-family: 'Montserrat', sans-serif;
+	margin:0;
+	background: url('11.jpg') no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-attachment: fixed;
+	background-position: center;
+}
+body a{
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+}
+ ul{
+	padding: 0;
+	margin: 0;
+}
+h1,h2,h3,h4,h5,h6{
+	margin:0;
+	padding:0;
+}
+p{
+	padding: 0;
+	margin: 0;
+	color:#999;
+}
+/*-- main --*/
+.main {
+	text-align: center;
+}
+h1.logo-w3  {
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #ffffff;
+	text-align:center;
+	margin: 5% 0;
+	width: 100%;
+}
+.w3layouts-main h2 {
+	color: #fff;
+    font-size: 29px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+	text-align: center;
+}
+.w3layouts-main{
+    max-width: 420px;
+    margin: 0 auto;
+    background:rgba(0, 0, 0, 0.2);
+	text-align: center;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+}
+.w3layouts-main{
+	padding: 40px 30px;
+}
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    outline: none;
+    font-size: 15px;
+    font-weight: 100;
+    color: #fff;
+    margin-bottom: 20px;
+	font-family: 'Montserrat', sans-serif;
+    border: 1px solid #fff;
+    background: transparent;
+    background:rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+    border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius:3px;
+	-o-border-radius: 3px;
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    width: 100%;
+    padding: 14px 30px;
+    font-size: 14px;
+    border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius:3px;
+	-o-border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #fff;
+    color: #333;
+    border: none;
+    outline: none;
+    cursor: pointer;
+	font-family: 'Montserrat', sans-serif;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+input[type="submit"]:hover {
+    background: #333;
+    color: #fff;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-o-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.w3layouts-main2 input[type="submit"] {
+    margin: 27px auto 31px;
+}
+/*--placeholder-color--*/
+
+::-webkit-input-placeholder{
+	color: #fff;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	color: #fff;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	color: #fff;
+}
+
+:-ms-input-placeholder {
+	color: #fff;
+}
+
+@media(max-width: 1600px){
+	h1.logo-w3 {
+		margin: 1em 0;
+	}
+}
+@media(max-width: 1440px){
+	h1.logo-w3 {
+		font-size: 2.8em;
+	}
+}
+@media(max-width: 1366px){
+	h1.logo-w3 {
+		font-size: 2.7em;
+	}
+	.footer-w3l p {
+		margin: 3em 0em 2em;
+	}
+}
+@media(max-width: 1280px){
+	h1.logo-w3 {
+		font-size: 2.8em;
+	}
+	.footer-w3l p {
+		margin: 4.5em 0em 0em;
+	}
+}
+#nameError, #phoneError, #passError, #emailError, #confirmError{
+    color: red;
+}
+@media(max-width: 1080px){
+	h1.logo-w3 {
+		font-size: 2.7em;
+		letter-spacing: 3px;
+	}
+	.w3layouts-main h2 {
+		font-size: 27px;
+	}
+}
+@media(max-width: 1050px){
+}
+@media(max-width: 1024px){
+	h1.logo-w3 {
+		font-size: 2.6em;
+	}
+	.w3layouts-main h2{
+		font-size: 26px;
+	}
+	.footer-w3l p {
+		margin: 2em 0em;
+	}
+}
+@media(max-width: 991px){
+	h1.logo-w3 {
+		font-size: 2.5em;
+		margin: 1em 0;
+	}
+	.w3layouts-main h2 {
+		font-size: 25px;
+	}
+	input[type="submit"] {
+		padding: 14px 30px;
+		font-size: .875em;
+	}
+}
+@media(max-width: 800px){
+	h1.logo-w3 {
+		font-size: 2.4em;
+		letter-spacing: 2px;
+	}
+}
+@media(max-width: 736px){
+	h1.logo-w3 {
+		font-size: 2.3em;
+	}
+	.footer-w3l p {
+		font-size: 14px;
+		letter-spacing: 1px;
+	}
+}
+@media(max-width: 667px){
+	h1.logo-w3 {
+		font-size: 2em;
+		letter-spacing: 1px;
+	}
+	.w3layouts-main h2 {
+		font-size: 23px;
+	}
+}
+@media(max-width: 568px){
+	.footer-w3l p {
+		margin: 2em;
+	}
+}
+@media(max-width: 480px){
+	h1.logo-w3 {
+		font-size: 1.8em;
+	}
+	.w3layouts-main h2 {
+		font-size: 20px;
+		letter-spacing: 1px;
+	}
+	.footer-w3l p {
+		margin: 2em 1em;
+	}
+	.w3layouts-main {
+		max-width: 350px;
+	}
+}
+@media(max-width: 414px){
+	h1.logo-w3 {
+		font-size: 1.7em;
+		line-height: 1.4;
+	}
+	.footer-w3l p {
+		font-size: 14px;
+	}
+	.w3layouts-main {
+		max-width: 300px;
+	}
+	input[type="text"], input[type="email"], input[type="password"] {
+		padding: 12px 15px;
+	}
+@media(max-width: 375px){
+	.w3layouts-main {
+		max-width: 280px;
+	}
+}
+@media(max-width: 320px){
+	h1.logo-w3 {
+		font-size: 1.4em;
+	}
+	.w3layouts-main h2 {
+		font-size: 19px;
+		letter-spacing: 0px;
+	}
+	.footer-w3l p {
+		font-size: 13px;
+		margin: 2em 0em 1.5em;
+	}
+}
+}
+	</style>
+
+	<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+
+</head>
+<body>
+
+
+	<div class="main">
+		<div class="main-w3l">
+			<h1 class="logo-w3">Sign up</h1>
+			<div class="w3layouts-main">
+				<h2><span>Register now</span></h2>
+					<form action="login.html" onsubmit="return register()">
+						<input placeholder="Full Name" id="name" type="text" ><span id="nameError"></span>
+						<input placeholder="Email" id="email" type="email"><span id="emailError"></span>
+						<input placeholder="Phone Number" id="phone" type="text"><span id="phoneError"></span>
+						<input placeholder="Password"  type="password"  id="password" ><span id="passError"></span>
+						<input placeholder="Confirm Password"  type="password"  id="password2" ></label><span id="confirmError"></span>
+						<input type="submit" value="Submit" >
+					</form>
+			</div>
+
+			<script>
+                   function register() {
+
+
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;;
+  var phone= document.getElementById('phone').value;
+  var password = document.getElementById('password').value;
+  var password2 = document.getElementById('password2').value;
+
+  if (name == "") {
+    document.getElementById("nameError").innerHTML="  PLEASE ENTER YOUR NAME";
+    return false;
+  }
+  /function for counting the numbers in name/
+function countdigits(name) {
+var digitcount = 0;
+var digitsRegex = /\d/g;
+
+var matches1 = name.match(digitsRegex);
+if (matches1) {
+digitcount = matches1.length;
+}
+return digitcount;
+}
+/function to count special characters in name/
+function countspecial(name) {
+var specialcount=0;
+var specialcharRegex = /[^A-Za-z0-9\s]/g;
+
+var matches2 = name.match(specialcharRegex);
+if (matches2) {
+specialcount = matches2.length;
+}
+return specialcount;
+}
+var count1 = countdigits(name);
+var count2 = countspecial(name);
+if (count1!=0 || count2!=0) {
+document.getElementById("nameError").innerHTML = "   INVALID NAME";
+return false;
+}
+
+  if (email == "") {
+    document.getElementById("emailError").innerHTML="  PLEASE ENTER YOUR EMAIL";
+    return false;
+  }
+
+  var phoneRegex= /^\d{10}$/;
+  if(phone.match(phoneRegex)){
+      return true;
+        }
+      else
+        {
+        document.getElementById("phoneError").innerHTML="PLEASE ENTER VALID PHONE NUMBER";
+        return false;
+        }
+  if (password == "") {
+    document.getElementById("passError").innerHTML="  PLEASE ENTER YOUR PASSWORD";
+    return false;
+  }
+  if (password.length<8) {
+    document.getElementById("passError").innerHTML="  MINIMUM LENGTH OF THE PASSWORD SHOULD BE 8";
+    return false;
+  }
+  var count3=0;
+  for (var i=0;i<password.length;i++) {
+    if (password.charAt(i)>='A' && password.charAt(i)<='Z') {
+      count3++;
+    }
+  }
+  if (count3==0) {
+    document.getElementById("passError").innerHTML="  PLEASE ADD ATLEAST ONE CAPITAL LETTER";
+    return false;
+  }
+
+  var count4=0;
+  for (var i=0;i<password.length;i++) {
+    if (password.charAt(i)==' ') {
+      count4++;
+    }
+  }
+  if (count4!=0) {
+    document.getElementById("passError").innerHTML = "  SPACE SHOULD NOT BE THERE";
+    return false;
+  }
+  function lowercase(password) {
+
+
+var lowercaseRegex = /[a-z]/;
+
+if (lowercaseRegex.test(password)) {
+return true;
+} else {
+return false;
+}
+}
+var lower = lowercase(password);
+
+if (lower) {
+
+}
+else {
+document.getElementById("passError").innerHTML = "   ENTER LOWERCASE CHARACTERS ";
+return false;
+}
+function num(password) {
+var numberRegex = /[0-9]/;
+
+
+
+if (numberRegex.test(password)) {
+return true;
+} else {
+return false;
+}
+}
+
+var number = num(password);
+
+if (num) {
+
+}
+else {
+document.getElementById("passError").innerHTML = "   ENTER DIGITS IN PASSWORD ";
+return false;
+}
+
+function special(password) {
+
+var specialCharRegex = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/;
+
+// Check if the password meets all the criteria
+if (specialCharRegex.test(password)) {
+return true; // Password is valid
+} else {
+return false; // Password is invalid
+}
+}
+
+var ch = special(password);
+
+if (!ch) {
+document.getElementById("passError").innerHTML = "   ENTER SPECIAL CHARACTERS";
+return false;
+}
+if (password2 == "") {
+    document.getElementById("confirmError").innerHTML=" RE-ENTER YOUR PASSWORD";
+    return false;
+  }
+  if (password != password2) {
+    document.getElementById("confirmError").innerHTML = "  PLEASE ENTER THE SAME PASSWORD ENTERED ABOVE";
+    return false;
+  }
+
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]+$/;
+
+
+if (emailRegex.test(email)) {
+
+}
+else {
+document.getElementById("emailError").innerHTML = " INVALID EMAIL";
+return false;
+}
+localStorage.setItem('userdata', email);
+localStorage.setItem('passdata', password);
+alert("register successful go to login page");
+window.location.href = 'log.html';
+  return true;
+
+                   }
+/*			window.onload = function () {
+					document.getElementById("password1").onchange = validatePassword;
+					document.getElementById("password2").onchange = validatePassword;
+				}
+
+				function validatePassword() {
+					var pass2 = document.getElementById("password2").value;
+					var pass1 = document.getElementById("password1").value;
+					if (pass1 != pass2)
+						document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+					else
+						document.getElementById("password2").setCustomValidity('');
+
+				}
+            }
+ */
+			</script>
+
+		</div>
+	</div>
+
+</body>
+</html>

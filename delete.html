@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flora in Indian Himalayas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic&family=Lato:wght@300&family=Montserrat:wght@200&family=Roboto+Mono:wght@500&family=Vollkorn&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://cdn.pixabay.com/photo/2017/07/04/05/50/mountains-2470053_1280.jpg') no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-attachment: fixed;
+	background-position: center;
+      color: #3a6351;
+      
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fefefe;
+      padding: 15px;
+      text-align: center;
+      font-size:20px; 
+      font-family: 'Lato', sans-serif;
+    }
+
+    header h1 {
+      margin: 0;
+      padding: 0;
+      font-size: 2em;
+      transition: color 0.3s ease;
+      font-family: 'Lato', sans-serif;
+    }
+
+    header h1:hover {
+      color: black;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 50px;
+    }
+
+    .navbar a.button {
+      background-color: #028c0b;
+      color: white;
+      border: 1px solid #33c40b;
+    }
+
+    .navbar a.button:hover {
+      background-color: #095e0e;
+      border: 1px solid #56fd61;
+    }
+
+    .navbar a.home-link {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    .navbar a.home-link:hover {
+      text-decoration: none;
+    }
+
+    .action-box {
+      background: #333;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .action-button {
+      background-color: #2196F3;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background-color: #0e5cad;
+    }
+
+    .form-heading {
+      background: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.5em;
+      margin-top: 20px;
+      border-radius: 8px;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .form-container {
+      margin: 20px auto;
+      width: 60%;
+      background-color:  rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: whitesmoke;
+      font-family: 'Lato', sans-serif;
+    }
+
+    input {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #2196F3;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0e5cad;
+    }
+    .in{
+      border:0;
+      border-bottom:3px solid #555;  
+      background:transparent;
+      width:100%;
+      padding:8px 0 5px 0;
+      font-size:16px;
+      color:#fff;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Flora of Indian Himalayas</h1>
+  </header>
+  <nav>
+    <div class="navbar">
+      <a href="document.html" class="home-link">Home</a>
+    </div>
+  </nav>
+  <div class="form-heading">Delete Data from the Conservation Status Table</div>
+  <div class="form-container">
+    <form id="deleteForm">
+      <label for="scientificNameID">Scientific Name ID:</label>
+      <input class="in" type="text" id="scientificNameID" name="scientificNameID">
+
+      <button type="button" onclick="deleteRecord()">Delete</button>
+    </form>
+  </div>
+
+  <script>
+    async function deleteRecord() {
+      const scientificNameID = document.getElementById("scientificNameID").value;
+
+      try {
+        const response = await fetch(`http://127.0.0.1:8000/delete_conserve?scientific_name_id=${scientificNameID}`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          console.log("Data deleted successfully:", result.deleted_scientific_name_id);
+          alert("Data deleted successfully!");
+        } else {
+          console.error("Error deleting data:", result.error);
+          alert("Error deleting data. Please try again.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred. Please try again later.");
+      }
+    }
+  </script>
+</body>
+
+</html>

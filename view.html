@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic&family=Lato:wght@300&family=Montserrat:wght@200&family=Roboto+Mono:wght@500&family=Vollkorn&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+
+  <title>Flora in Indian Himalayas</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://cdn.pixabay.com/photo/2016/09/05/14/55/flower-1646746_1280.jpg') no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-attachment: fixed;
+	background-position: center;
+      color: #3a6351;
+
+    }
+
+    header {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fefefe;
+  padding: 15px;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+}
+
+.action-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  height: 60px;
+}
+
+    header h1 {
+      margin: 0;
+      padding: 0;
+      font-size: 2em;
+      transition: color 0.3s ease;
+      font-family: 'Lato', sans-serif;
+    }
+
+    header h1:hover {
+      color: black;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+    }
+
+    .navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+}
+
+/* Add this style for the button class */
+.navbar a.button {
+  background-color: #363062; /* Change this color to your desired button color */
+  color: white;
+  border: 1px solid #363062; /* Border color matches the background color */
+  font-family: 'Lato', sans-serif;
+  width: calc(20% - 2px); /* Calculated width for 5 equal sections with 1px border on each side */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+.navbar a.button:hover {
+  background-color: #A5D7E8; /* Change this color to your desired button hover color */
+  border: 1px solid #A5D7E8; /* Border color matches the hover background color */
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-right: 1px solid #080a08;
+  transition: background-color 0.3s ease;
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar a:hover {
+  background-color: #A5D7E8;
+}
+
+.navbar a.button:hover,
+.navbar a.button {
+  border-right: none;
+}
+
+.navbar a:last-child {
+  border-right: none;
+}
+
+section {
+  padding: 20px;
+}
+
+    .table-container {
+      margin: 20px auto;
+      width: 80%;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #ddd;
+      background-color: #d7f3da;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      font-family: 'Lato', sans-serif;
+    }
+
+    th,
+    td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #66bb6a;
+      color: white;
+    }
+
+    tbody tr:hover {
+      background-color: #e8f5e9;
+    }
+
+    footer {
+      background-color: #4caf50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      font-family: 'Lato', sans-serif;
+    }
+
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #3e8e41;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <h1>Flora of Indian Himalayas</h1>
+  </header>
+
+  <nav>
+    <div class="navbar">
+      <a href="#floral_d" onclick="showAllData('floral_d')" class="button">Floral Distribution Data</a>
+      <a href="#conserve_s" onclick="showAllData('conserve_s')" class="button">Conservation Status</a>
+      <a href="#species_s" onclick="showAllData('species_s')" class="button">Species Data</a>
+      <a href="#loc" onclick="showAllData('loc')" class="button">Location data</a>
+      <a href="#soil" onclick="showAllData('soil')" class="button">Soil Data</a>
+      <a href="#dataset" onclick="showAllData('dataset')" class="button">dataset</a>
+    </div>
+  </nav>
+
+  <div class="table-container">
+    <table id="dataTable" border="1px">
+      <thead></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    async function showAllData(tableName) {
+      const result = await fetch("http://127.0.0.1:8000/showall");
+      const data = await result.json();
+
+      const dataTable = document
+        .getElementById("dataTable")
+        .getElementsByTagName("tbody")[0];
+      const tableHeaders = document
+        .getElementById("dataTable")
+        .getElementsByTagName("thead")[0];
+
+      tableHeaders.innerHTML = "";
+      dataTable.innerHTML = "";
+
+      let selectedResult;
+      switch (tableName) {
+        case "loc":
+          selectedResult = data.result_4;
+          break;
+        case "floral_d":
+          selectedResult = data.result_1;
+          break;
+        case "conserve_s":
+          selectedResult = data.result_2;
+          break;
+        case "species_s":
+          selectedResult = data.result_3;
+          break;
+        case "soil":
+          selectedResult = data.result_5;
+          break;
+        case "dataset":
+          selectedResult = data.result_6;
+          break;
+        default:
+          console.error("Invalid table name");
+          return;
+      }
+
+      addHeadersToTable(tableHeaders, Object.keys(selectedResult[0]));
+
+      selectedResult.forEach((rowData) => {
+        addRowToTable(dataTable, rowData);
+      });
+    }
+
+    function addHeadersToTable(tableHeaders, headerData) {
+      const headerRow = tableHeaders.insertRow();
+
+      headerData.forEach((header) => {
+        const th = document.createElement("th");
+        th.appendChild(document.createTextNode(header));
+        headerRow.appendChild(th);
+      });
+    }
+
+    function addRowToTable(table, rowData) {
+      const row = table.insertRow();
+
+      Object.values(rowData).forEach((value) => {
+        const cell = row.insertCell();
+        cell.appendChild(document.createTextNode(value));
+      });
+    }
+
+    // Show initial data
+    showAllData("floral_d");
+  </script>
+</body>
+
+</html>
